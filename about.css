@@ -1,0 +1,111 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body.main {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navbar and h2 styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between h2 and ul */
+    align-items: center; /* Aligns the nav links and h2 vertically */
+    background-color: darkmagenta;
+    padding: 10px 20px;
+}
+
+.navbar h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffab00;
+}
+
+/* Container for Cards and Icons */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Space between the cards */
+    margin-top: 20px;
+}
+
+/* Styling for Card1 and Card2 */
+.card1, .card2 {
+    flex: 1; /* Allow cards to take up equal space */
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 450px; /*Minimum height for the cards*/
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Ensure content fits within card */
+    margin: 0; /* Reset margin */
+    /* height: 480px; */
+}
+
+/* Ensure image fits within the card */
+.card1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    height: 430px;
+}
+
+/* Ensure paragraph fits within the card */
+.card2 p {
+    margin: 0; /* Remove default margin from paragraphs */
+    flex: 1; /* Allow paragraph to grow and fill available space */
+}
+
+/* Styling for Icons */
+.icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Positioning icons at the lower section */
+.lower-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.icons i {
+    font-size: 24px;
+    color: #555;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: darkmagenta;
+}

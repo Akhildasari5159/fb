@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Future Blasters Solutions</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="./Css/style.css">
+    
+    <link rel="icon" type="image/png" href="./images/logo1-removebg-preview (1).png">
+    <!-- links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const navLinks = document.getElementById('navLinks');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+});
+
+            
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo1-removebg-preview (1).png" alt="Logo">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="menu-icon" id="menuIcon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="slider">  
+      <div class="slide" style="background: dodgerblue; max-height: 600px; overflow: hidden;">
+        <video autoplay muted loop class="slide-video">
+            <source src="./videos/project.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    
+        <div class="slide" style="background:coral;object-fit: cover;">
+           <img src="./images/iot.jpg" >
+        </div>
+       
+        <div class="slide" style="background:crimson;object-fit: cover;">
+          <img src="./images/web.jpg" >
+        </div>
+        
+        <div class="slide" style="background: #6edf10;">
+          <img src="./images/paper.png" >
+        </div>
+        
+        <!--Controlling arrows-->
+        <span class="controls" onclick="prevSlide(-1)" id="left-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </span>
+        <span class="controls" id="right-arrow" onclick="nextSlide(1)"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </span>
+      </div>
+        <div id="dots-con">
+       <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+       </div>
+
+<script>
+    var slides = document.querySelectorAll(".slide");
+    var dots = document.querySelectorAll(".dot");
+    var index = 0;
+    var autoScrollInterval;
+    
+    // Initialize the carousel
+    changeSlide();
+    
+    // Function to go to the previous slide
+    function prevSlide(n){
+      index += n;
+      changeSlide();
+      resetAutoScroll(); // Reset the auto-scroll timer when manually navigating
+    }
+    
+    // Function to go to the next slide
+    function nextSlide(n){
+      index += n;
+      changeSlide();
+      resetAutoScroll(); // Reset the auto-scroll timer when manually navigating
+    }
+    
+    // Function to change the slide
+    function changeSlide(){
+      if (index > slides.length - 1) {
+        index = 0;
+      }
+      
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+    
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        dots[i].classList.remove("active");
+      }
+    
+      slides[index].style.display = "block";
+      dots[index].classList.add("active");
+    }
+    
+    // Auto-scroll functionality
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        nextSlide(1);
+      }, 5000); // Change slide every 3 seconds
+    }
+    
+    // Function to reset the auto-scroll timer
+    function resetAutoScroll() {
+      clearInterval(autoScrollInterval);
+      startAutoScroll();
+    }
+    
+    // Start auto-scrolling when the page loads
+    startAutoScroll();
+    
+    </script>
+    <br>
+    <div class="scroll-container">
+      <div class="scroll-text">
+        Welcome to our website! Stay tuned for the latest updates. Follow us on 
+        <a href="https://www.instagram.com/futureblasters7" target="_blank" rel="noopener noreferrer">Instagram</a> 
+        and 
+        <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">Facebook</a>. 
+        &nbsp; &nbsp; &nbsp; 
+        Welcome to our website! Stay tuned for the latest updates. Follow us on 
+        <a href="https://www.instagram.com/futureblasters7" target="_blank" rel="noopener noreferrer">Instagram</a> 
+        and 
+        <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">Facebook</a>.
+      </div>
+      
+    </div>
+    
+    <div class="container">
+      <div class="video-section">
+          <video src="./videos/project3.mp4" autoplay muted loop></video>
+      </div>
+      <div class="image-section">
+        <img src="./images/iot.jpg" alt="Sample Image">
+        <div class="text-overlay">
+            <h3>Welcome to Future Blasters Solutions</h3>
+            <br>
+            <p style="text-align: justify;color: #08dce8;">Future Blasters Solutions, a startup launched in 2024, is driven by a talented team of BTech students. We specialize in custom websites, innovative projects, and paper publication, turning ideas into impactful solutions.</p>
+
+            <a href="about-us.html" class="hover-button">Learn More</a>
+        </div>
+    </div>
+      <div class="logo-overlay" onclick="openPopup()">
+          <img src="./images/logo1-removebg-preview (1).png" alt="Logo">
+      </div>
+  </div>
+
+  <div id="popup" class="popup" onclick="closePopup(event)">
+      <div class="popup-content" onclick="event.stopPropagation()">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h2 style="text-align: center;">FUTURE BLASTERS SOLUTIONS</h2>
+          <p style="text-align: justify;">Welcome to Future Blasters Solutions, where innovation meets expertise! Our team of talented BTech students are dedicated to turning ideas into impactful solutions. We specialize in three main areas:</p>
+          <ul style="text-align: justify;">
+              <li><strong>BTech Final Year Projects:</strong> We help students develop innovative and practical final year projects that make a difference. Our solutions are designed to be innovative and feasible, leading to academic success and practical application.</li>
+              <li><strong>Website Development:</strong> We offer comprehensive website development services, tailored to meet your specific needs by creating a beautiful and responsive website. Whether you want to create your own blog, company website, or eCommerce platform, we have the skills and creativity to bring your vision to life.</li>
+              <li><strong>Paper Publishing:</strong> Our expertise extends to paper publishing, where we help you publish your research and findings in reputable journals. We provide assistance throughout the entire process, from writing and drafting to delivery and review.</li>
+              <li><strong>Our Team:</strong> This initiative is led by Akhil Dasari and a team of dedicated colleagues: Teja, Dilip, Prem Kumar, Jayant, and Bhaskar Durga. Together, we are committed to delivering exceptional results and making the future a success.</li>
+          </ul>
+          <br>
+          <p>Join us on our journey of innovation and excellence. Feel free to contact us for more information or to start your project!</p>
+      </div>
+  </div>
+
+  <script>
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup(event) {
+    if (event) {
+        event.stopPropagation(); // Prevents event from propagating to the popup
+    }
+    document.getElementById('popup').style.display = 'none';
+}
+
+  </script>
+  
+  <div class="services-section">
+    <h2 style="text-align: center;color: #ffffff;">Our Services</h2>
+    <br>
+    <div class="service-circle-container">
+        <div class="service-circle" onclick="openServicePopup('service-popup1')">
+            <img src="./images/projects.jpeg" alt="Image 1">
+        </div>
+        <div class="service-circle" onclick="openServicePopup('service-popup2')">
+            <img src="./images/develop.jpg" alt="Image 2">
+        </div>
+    </div>
+    <div class="service-circle-container">
+        <div class="service-circle" onclick="openServicePopup('service-popup3')">
+            <img src="./images/paper1.jpeg" alt="Image 3">
+        </div>
+    </div>
+</div>
+
+<!-- Popup Structure -->
+<div id="service-popup1" class="service-popup">
+    <div class="service-popup-content">
+        <span class="service-close" onclick="closeServicePopup(event, 'service-popup1')">&times;</span>
+        <h2>BTech CSE & ECE PROJECTS</h2>
+        <img src="./images/coding1.jpg" alt="Popup Image 1">
+        <p style="text-align: justify;"><strong>BTech Final Year Projects:</strong> We help students develop innovative and practical final year projects that make a difference. Our solutions are designed to be innovative and feasible, leading to academic success and practical application.</p>
+        <a href="index.html" class="service-hover-button">Learn More</a>
+    </div>
+</div>
+
+<div id="service-popup2" class="service-popup">
+    <div class="service-popup-content">
+        <span class="service-close" onclick="closeServicePopup(event, 'service-popup2')">&times;</span>
+        <h2>WEBSITE DEVELOPMENT</h2>
+        <img src="./images/web1.jpg" alt="Popup Image 2">
+        <p style="text-align: justify;"><strong>Website Development:</strong>We offer comprehensive website development services, tailored to meet your specific needs by creating a beautiful and responsive website. Whether you want to create your own blog, company website, or eCommerce platform, we have the skills and creativity to bring your vision to life. </p>
+        <a href="index.html" class="service-hover-button">Learn More</a>
+    </div>
+</div>
+
+<div id="service-popup3" class="service-popup">
+    <div class="service-popup-content">
+        <span class="service-close" onclick="closeServicePopup(event, 'service-popup3')">&times;</span>
+        <h2>PAPER PUBLICATION</h2>
+        <img src="./images/research.png" alt="Popup Image 3">
+        <p style="text-align: justify;"><strong>Paper Publishing:</strong>Our expertise extends to paper publishing, where we help you publish your research and findings in reputable journals. We provide assistance throughout the entire process, from writing and drafting to delivery and review. </p>
+        <a href="index.html" class="service-hover-button">Learn More</a>
+    </div>
+</div>
+
+<script>
+  function openServicePopup(popupId) {
+    document.getElementById(popupId).style.display = 'flex';
+}
+
+function closeServicePopup(event, popupId) {
+    event.stopPropagation(); // Prevents event from propagating to the popup
+    document.getElementById(popupId).style.display = 'none';
+}
+
+// Close the popup when clicking outside of the popup content
+window.onclick = function(event) {
+    const popups = document.querySelectorAll('.service-popup');
+    popups.forEach(function(popup) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+}
+
+</script>  
+<br>
+<h2 style="text-align: center;">Projects</h2>
+<br>
+<div class="card-container">
+  <div class="card" onclick="redirectToPage('project1.html')">
+      <img src="./images/Final output.jpg" alt="Card 1">
+  </div>
+  <div class="card" onclick="redirectToPage('project2.html')">
+      <img src="./images/smha.jpg" alt="Card 2" style="height: 270px;">
+  </div>
+  <div class="card" onclick="redirectToPage('project3.html')">
+    <img src="./images/project3.png" alt="Card 2" style="height: 270px;">
+</div>
+  <!-- <div class="card" onclick="redirectToPage('page3.html')">
+      <img src="./images/card3.jpg" alt="Card 3">
+  </div> -->
+</div>
+
+<script>
+  function redirectToPage(url) {
+    window.location.href = url;
+}
+
+</script>
+ <br>
+ <br>
+ <div class="technologies-section">
+    <h2 style="text-align: center;">Technologies & Softwares and Programming Languages</h2>
+    <br>
+    <br>
+    <div class="scroll-container">
+        <button class="scroll-btn left" onclick="scrollLeft()">&#9664;</button>
+        <div class="scrolling-images" id="scrolling-images">
+            <div class="image-container">
+                <img src="./images/iot.jpeg" alt="Tech 1">
+            </div>
+            <div class="image-container">
+                <img src="./images/rasp.jpeg" alt="Tech 2">
+            </div>
+            <div class="image-container">
+                <img src="./images/arduino.jpeg" alt="Tech 3">
+            </div>
+            <div class="image-container">
+              <img src="./images/python.jpeg" alt="Tech 4">
+          </div>
+          <div class="image-container">
+              <img src="./images/html.jpeg" alt="Tech 5">
+          </div>
+          <div class="image-container">
+              <img src="./images/css.jpeg" alt="Tech 6">
+          </div>
+          <div class="image-container">
+              <img src="./images/js.jpeg" alt="Tech 7">
+          </div>
+          <div class="image-container">
+              <img src="./images/xampp.jpeg" alt="Tech 8">
+          </div>
+          <div class="image-container">
+              <img src="./images/my sql.jpeg" alt="Tech 9">
+          </div>
+          <div class="image-container">
+              <img src="./images/vscode.jpeg" alt="Tech 10">
+          </div>
+          <div class="image-container">
+              <img src="./images/deep.jpeg" alt="Tech 11">
+          </div>
+          <div class="image-container">
+              <img src="./images/ml.jpeg" alt="Tech 12">
+          </div>
+        </div>
+        <button class="scroll-btn right" onclick="scrollRight()">&#9654;</button>
+    </div>
+  </div>
+  
+ <script>
+   const scrollingContainer = document.getElementById('scrolling-images');
+const scrollAmount = scrollingContainer.clientWidth * 0.8; // Adjust scroll distance
+const scrollInterval = 1000; // Interval in milliseconds
+
+function autoScroll() {
+    scrollingContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+
+    // Loop back to the beginning after scrolling to the end
+    setTimeout(() => {
+        if (scrollingContainer.scrollLeft + scrollingContainer.clientWidth >= scrollingContainer.scrollWidth) {
+            scrollingContainer.scrollLeft = 0;
+        }
+    }, scrollInterval);
+}
+
+// Start automatic scrolling
+setInterval(autoScroll, scrollInterval);
+
+function scrollLeft() {
+    scrollingContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+function scrollRight() {
+    scrollingContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+ </script>
+  
+  <div class="technologies-section">
+    <h2 style="text-align: center;">Meet Our Team</h2>
+    <br>
+    <div class="scroll-container" >
+
+        <div class="scrolling-images" id="scrolling-images" style="justify-content: center;">
+            <div class="image-container" style="justify-content: center;">
+                <img src="./images/DSC_0044 (1).jpg" alt="Member 1">
+                <h3>Akhil Dasari</h3>
+                <p>Co-Founder,<br> Developer</p>
+            </div>
+            <div class="image-container">
+                <img src="./images/PREM.jpg" alt="Member 2">
+                <h3>Prem Kumar</h3>
+                <p>HR,<br> Developer</p>
+            </div>
+            <div class="image-container">
+                <img src="./images/teja.jpg" alt="Member 3">
+                <h3>Teja</h3>
+                <p>Manager,<br> Developer</p>
+            </div>
+            <div class="image-container">
+                <img src="./images/DILEEP.jpg" alt="Member 4">
+                <h3>Dileep Kumar</h3>
+                <p>SM Manager,<br> Developer</p>
+            </div>
+            <div class="image-container">
+                <img src="./images/JAYANTH.jpg" alt="Member 5">
+                <h3>Jayanth Vamsi</h3>
+                <p>Developer</p>
+            </div>
+            <div class="image-container">
+                <img src="./images/bhaskar.jpg" alt="Member 6">
+                <h3>Bhaskar</h3>
+                <p>Developer</p>
+            </div>
+        </div>
+      
+    </div>
+</div>
+
+  
+  <script>
+    
+  
+    // Get elements and calculate dimensions
+    const carousel = document.getElementById('team-carousel');
+    const teamContainer = carousel.querySelector('.team-container');
+    const memberElements = teamContainer.querySelectorAll('.team-member');
+    const memberWidth = memberElements[0].clientWidth; // Width of a single team member element
+    const visibleMembersCount = 3; // Number of visible members in the row
+    const scrollAmount1 = memberWidth * visibleMembersCount; // Amount to scroll
+    const autoScrollInterval = 3000; // Interval for automatic scrolling in milliseconds
+
+    // Function to handle automatic scrolling
+    function autoScroll() {
+        teamContainer.style.transform = `translateX(-${scrollAmount1}px)`;
+
+        // Loop back to the beginning after scrolling to the end
+        setTimeout(() => {
+            const currentTransform = teamContainer.style.transform.replace('translateX(', '').replace('px)', '') || '0';
+            if (parseInt(currentTransform) >= teamContainer.scrollWidth - scrollAmount1) {
+                teamContainer.style.transition = 'none'; // Disable transition
+                teamContainer.style.transform = 'translateX(0)'; // Reset position
+                setTimeout(() => {
+                    teamContainer.style.transition = 'transform 0.5s ease'; // Re-enable transition
+                }, 50); // Small delay to re-enable transition
+            }
+        }, autoScrollInterval);
+    }
+
+    // Start automatic scrolling
+    setInterval(autoScroll, autoScrollInterval);
+
+    // Function to manually scroll left
+    function scrollLeft1() {
+        teamContainer.scrollBy({
+            left: -scrollAmount1,
+            behavior: 'smooth'
+        });
+    }
+
+    // Function to manually scroll right
+    function scrollRight1() {
+        teamContainer.scrollBy({
+            left: scrollAmount1,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="path/to/logo.png" alt="Logo">
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="#contact-us">Contact Us</a>
+        </div>
+        <div class="footer-details">
+            <p>Visitor Count: <span id="visitor-count"></span></p>
+            
+        </div>
+        
+        <div class="footer-bottom">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-conditions">Terms and Conditions</a>
+            
+            <p>&copy; 2024 Future Blasters Solutions, All Rights Reserved.</p>
+        </div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>
