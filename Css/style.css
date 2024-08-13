@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #00C9FF, #92FE9D);
+    background: linear-gradient(to right, #70e1f5,#ffd194);
     /* background-color: #3c3939; */
     padding: 30px 30px;
     position: relative;
@@ -697,149 +697,96 @@ header {
   }
 }
 
+
+.tech-section {
+  margin-top: 10px;
+  background-color: whitesmoke;
+
+}
+
+.tech-scroll-container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.tech-scroll-track {
+  display: flex;
+  gap: 3em;
+}
+
+.tech-scroll-slide {
+  flex-shrink: 0;
+}
+
+.tech-scroll-slide img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: tech-scroll 60s linear infinite;
+}
+
+@keyframes tech-scroll {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-1000%);}
+}
+
 .technologies-section {
-  padding: 20px;
+  margin-top: 10px;
+  background-color: whitesmoke;
+
 }
 
 .scroll-container {
+  width: 100%;
   display: flex;
-  align-items: center;
   overflow: hidden;
-  position: relative;
 }
 
 .scrolling-images {
   display: flex;
-  align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  width: calc(100% - 80px); /* Adjust according to the button widths */
+  gap: 3em;
 }
 
 .image-container {
-  display: inline-block;
-  flex: 0 0 auto;
-  margin: 0 10px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .image-container img {
-  border-radius: 50%;
   width: 100px;
   height: 100px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.scroll-btn {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
 }
 
-.scroll-btn.left {
-  left: 0;
+.image-container h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #000;
 }
 
-.scroll-btn.right {
-  right: 0;
+.image-container p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #555;
 }
 
-@media (max-width: 768px) {
-  .image-container img {
-      width: 80px;
-      height: 80px;
-  }
-}
-
-.team-section {
-  padding: 20px;
-}
-
-.team-carousel {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.team-container {
-  display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.5s ease;
-}
-
-.team-member {
-  flex: 0 0 22%; /* Adjust based on number of visible items */
-  box-sizing: border-box;
-  text-align: center;
-  padding: 10px;
-}
-
-.team-member img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-}
-
-.team-member h3 {
-  margin: 5px 0 5px;
-  font-size: 16px;
-}
-
-.team-member p {
-  margin: 0;
-  color: #666;
-}
-
-/* Buttons for manual scrolling */
-.scroll-btn1 {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.scroll-btn1.left {
-  left: 0;
-}
-
-.scroll-btn1.right {
-  right: 0;
-}
-
-@media (max-width: 768px) {
-  .team-member img {
-    width: 100px;
-    height: 100px;
-  }
-}
 
 .footer {
   background-color: #000; /* Light background color */
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+}
+.footer-logo img {
+  width: 90px; /* Adjust size as needed */
+  height: 90px; /* Ensure height is equal to width */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the entire circle */
 }
 
 .footer-logo img {
@@ -854,12 +801,39 @@ header {
 .footer-nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #007bff; /* Link color */
+  color: #f0f2f4; /* Link color */
   font-size: 16px;
 }
+.footer-nav {
+  display: flex;
+  flex-direction: column; /* Stacks the links vertically */
+  align-items: flex-start; /* Aligns the links to the start (left) */
+}
 
-.footer-nav a:hover {
-  text-decoration: underline;
+.footer-nav a {
+  margin-bottom: 10px; /* Adds space between each link */
+  text-decoration: none; /* Removes the underline from the links */
+  color:#f0f2f4;/* Change the color to black */
+  font-size: 20px;
+}
+
+.footer-contact {
+  text-align: center; /* Centers text within the section */
+  margin: 0 auto; /* Centers the entire section horizontally */
+  max-width: 300px; /* Optional: sets a max-width for better control */
+}
+
+.footer-contact h4,
+.footer-contact h6 {
+  margin-bottom: 10px; /* Adds space between elements */
+  color: #fff;
+  font-size: 15px;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
 }
 
 
@@ -867,15 +841,151 @@ header {
 .footer-bottom {
   font-size: 14px;
   color: #6c757d; /* Light text color */
+  text-align: center; 
 }
 
 .footer-bottom a {
   margin: 0 15px;
   text-decoration: none;
-  color: #007bff; /* Link color */
+  color: #f9fafb; /* Link color */
+  text-align: center; 
 }
 
-.footer-bottom a:hover {
-  text-decoration: underline;
+.whatsapp_float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
 }
+
+.whatsapp-icon {
+  margin-top: 16px;
+}
+
+/* for mobile */
+@media screen and (max-width: 767px) {
+  .whatsapp-icon {
+      margin-top: 10px;
+  }
+
+  .whatsapp_float {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 10px;
+      font-size: 22px;
+  }
+}
+
+.footer-enquiry-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Keeps the form in a column layout */
+  align-items: flex-end; /* Aligns the form to the right */
+  margin-top: -240px;
+  margin-right: 150px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: #222; /* Input background color */
+  color: #fff; /* Input text color */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ccc; /* Placeholder text color */
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+.sticky li img {
+  float: right;
+  margin: 5px 0 5px 4px; /* Adjusted margin to align icons to the left */
+}
+.sticky-container {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  left: -165px;
+  top: 230px;
+  width: 210px;
+  z-index: 1100;
+}
+
+.sticky li {
+  list-style-type: none;
+
+  color: #efefef;
+  height: 43px;
+  padding: 0;
+  margin: 0 0 1px 0;
+
+  cursor: pointer;
+}
+@keyframes scale {
+0% {
+  transform: scale(1);
+}
+50% {
+  transform: scale(1.2);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+.social-icons {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+margin-top: -20px;
+
+}
+
+.social-icon {
+margin: 0 0px; /* Adjust margin as needed */
+
+}
+
+.social-icon img {
+width: 40px; /* Adjust width as needed */
+height: auto; /* Maintain aspect ratio */
+animation: scale 1s infinite alternate; /* Apply animation */
+border-radius: 10px;
+
+}
+
+
 
